@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GTA VI: Trust Me Edition</title>
+    <style>
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(145deg, #251641, #581c50 65%, #83364e);
+        color: #fff5e8;
+        font:
+          1rem system-ui,
+          sans-serif;
+        text-align: center;
+      }
+
+      main {
+        width: min(28rem, calc(100% - 3rem));
+      }
+
+      h1 {
+        font-size: clamp(1.8rem, 7vw, 3rem);
+      }
+
+      .track {
+        height: 0.6rem;
+        overflow: hidden;
+        border-radius: 1rem;
+        background: #ffffff30;
+      }
+
+      .fill {
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, #ff7bac, #ffc574);
+        transform-origin: left;
+        animation: download 3.3s ease-out both;
+      }
+
+      @keyframes download {
+        from {
+          transform: scaleX(0.08);
+        }
+        to {
+          transform: scaleX(1);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .fill {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>GTA VI: Trust Me Edition</h1>
+      <p id="loading-status" role="status">Downloading Vice City…</p>
+      <div class="track" aria-hidden="true"><div class="fill"></div></div>
+      <p id="loading-note">94 KB. Traffic sold separately.</p>
+    </main>
+    <script>
+      const loadingStatus = document.getElementById("loading-status");
+      const loadingNote = document.getElementById("loading-note");
+
+      window.setTimeout(() => {
+        loadingStatus.textContent = "Installing Vice City…";
+      }, 1200);
+
+      window.setTimeout(() => {
+        loadingStatus.textContent = "Entering Vice City…";
+        loadingNote.textContent =
+          "Please wait. We're stuck in traffic. Please don't uninstall us. We take up less than 1 MB.";
+      }, 2500);
+
+      window.setTimeout(() => {
+        window.location.replace("https://www.youtube.com/live/KY4DWumZffg");
+      }, 3500);
+    </script>
+  </body>
+</html>
